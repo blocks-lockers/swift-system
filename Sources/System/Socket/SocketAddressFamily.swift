@@ -201,8 +201,8 @@ public extension SocketAddressFamily {
     static var smc: SocketAddressFamily { SocketAddressFamily(_AF_SMC) }
     
     /// XDP (express data path) interface.
-    @_alwaysEmitIntoClient
-    static var xdp: SocketAddressFamily { SocketAddressFamily(_AF_XDP) }
+    // @_alwaysEmitIntoClient
+    // static var xdp: SocketAddressFamily { SocketAddressFamily(_AF_XDP) }
 }
 #endif
 

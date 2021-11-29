@@ -214,7 +214,11 @@ internal func system_gettimeofday(
   #if ENABLE_MOCKING
   if mockingEnabled { return _mock(time, tz) }
   #endif
+  #if os(Linux) && arch(arm64)
+  return gettimeofday(time, nil)
+  #else
   return gettimeofday(time, tz)
+  #endif
 }
 
 internal func system_settimeofday(
